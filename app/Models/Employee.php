@@ -12,7 +12,20 @@ class Employee{
 
     function addEmployee($data){
         DB::table('employee')->insert($data);
-    
+    }
+
+
+    function deleteEmployee($id){
+        DB::table('employee')->where('id',$id)->delete();
+    }
+
+
+    function updateEmployee($id,$data){
+        DB::table('employee')->where('id',$id)->update($data);
+    }
+    function employeeById($id){
+        $data=DB::table('employee')->where('id',$id)->get()->first();
+        return $data;
     }
     
 }

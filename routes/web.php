@@ -18,3 +18,6 @@ Route::get('/', function () {
 });
 Route::get('/employee', 'App\Http\Controllers\EmployeeController@employee');
 Route::post('/addemployee', 'App\Http\Controllers\EmployeeController@addEmployee');
+Route::delete('/deleteemployee/{id}', 'App\Http\Controllers\EmployeeController@deleteEmployee');
+Route::patch('/updateemployee/{id}', 'App\Http\Controllers\EmployeeController@updateEmployee');
+Route::get('/employeebyid/{id}', 'App\Http\Controllers\EmployeeController@employeeById');

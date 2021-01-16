@@ -19,4 +19,24 @@ class EmployeeController extends Controller{
         $newEmployee=new Employee();
         $newEmployee->addEmployee($req->all());
     }
+
+
+    function deleteEmployee(Request $req){
+        $id=$req->id;
+        $newEmployee=new Employee();
+        $newEmployee->deleteEmployee($id);
+    }
+
+    function updateEmployee(Request $req){
+        $id=$req->id;
+        $newEmployee=new Employee();
+        $newEmployee->updateEmployee($id,$req->all());
+    }
+
+    function employeeById(Request $req){
+        $id=$req->id;
+        $newEmployee=new Employee();
+        $data=$newEmployee->employeeById($id);
+        return response()->json($data);
+    }
 }

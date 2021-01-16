@@ -17,3 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/employee', 'App\Http\Controllers\EmployeeController@employee');
+Route::post('/addemployee', 'App\Http\Controllers\EmployeeController@addEmployee');
